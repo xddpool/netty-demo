@@ -69,7 +69,6 @@ public class TestPipeline {
                 })
                 .bind(8080);
     }
-
     @Data
     @AllArgsConstructor
     static class Student {

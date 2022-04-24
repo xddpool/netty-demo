@@ -34,7 +34,6 @@ public class TestRedis {
                             set(ctx);
                             get(ctx);
                         }
-
                         private void get(ChannelHandlerContext ctx) {
                             ByteBuf buf = ctx.alloc().buffer();
                             buf.writeBytes("*2".getBytes());
@@ -49,7 +48,6 @@ public class TestRedis {
                             buf.writeBytes(LINE);
                             ctx.writeAndFlush(buf);
                         }
-
                         private void set(ChannelHandlerContext ctx) {
                             ByteBuf buf = ctx.alloc().buffer();
                             buf.writeBytes("*3".getBytes());

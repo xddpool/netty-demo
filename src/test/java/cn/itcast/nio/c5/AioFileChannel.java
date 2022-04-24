@@ -28,7 +28,6 @@ public class AioFileChannel {
                     attachment.flip();
                     debugAll(attachment);
                 }
-
                 @Override // read 失败
                 public void failed(Throwable exc, ByteBuffer attachment) {
                     exc.printStackTrace();

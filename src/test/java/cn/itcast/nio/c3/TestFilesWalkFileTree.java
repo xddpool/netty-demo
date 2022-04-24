@@ -14,7 +14,6 @@ public class TestFilesWalkFileTree {
                 Files.delete(file);
                 return super.visitFile(file, attrs);
             }
-
             @Override
             public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
                 Files.delete(dir);

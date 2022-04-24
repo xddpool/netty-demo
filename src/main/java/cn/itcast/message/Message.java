@@ -33,7 +33,20 @@ public abstract class Message implements Serializable {
     public static final int GroupChatResponseMessage = 11;
     public static final int GroupMembersRequestMessage = 12;
     public static final int GroupMembersResponseMessage = 13;
+
+    /**
+     * 请求信息byte值
+     */
+    public static final int RPC_MESSAGE_TYPE_REQUEST = 101;
+
+    /**
+     * 响应信息byte值
+     */
+    public static final int RPC_MESSAGE_TYPE_RESPONSE = 102;
+
+
     private static final Map<Integer, Class<?>> messageClasses = new HashMap<>();
+
 
     static {
         messageClasses.put(LoginRequestMessage, LoginRequestMessage.class);
@@ -50,5 +63,7 @@ public abstract class Message implements Serializable {
         messageClasses.put(GroupChatResponseMessage, GroupChatResponseMessage.class);
         messageClasses.put(GroupMembersRequestMessage, GroupMembersRequestMessage.class);
         messageClasses.put(GroupMembersResponseMessage, GroupMembersResponseMessage.class);
+        messageClasses.put(RPC_MESSAGE_TYPE_REQUEST, RpcRequestMessage.class);
+        messageClasses.put(RPC_MESSAGE_TYPE_RESPONSE, RpcResponseMessage.class);
     }
 }
