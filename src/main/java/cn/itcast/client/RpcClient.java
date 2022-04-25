@@ -14,7 +14,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RpcClient {
     public static void main(String[] args) {
+        //EventGroup
         NioEventLoopGroup group = new NioEventLoopGroup();
+
+        //Handler
         LoggingHandler LOGGING_HANDLER = new LoggingHandler();
         MessageCodecSharable MESSAGE_CODEC = new MessageCodecSharable();
 
@@ -33,10 +36,9 @@ public class RpcClient {
             Channel channel = bootstrap.connect("localhost", 8080).sync().channel();
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
-            log.error("client error", e);
+            log.error("client error");
         } finally {
             group.shutdownGracefully();
         }
     }
-
 }

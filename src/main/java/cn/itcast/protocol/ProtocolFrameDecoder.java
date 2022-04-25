@@ -2,9 +2,6 @@ package cn.itcast.protocol;
 
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
-/**
- * @author xiaoxiong
- */
 public class ProtocolFrameDecoder extends LengthFieldBasedFrameDecoder {
 
     public ProtocolFrameDecoder() {

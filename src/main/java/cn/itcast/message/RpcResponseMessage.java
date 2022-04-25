@@ -3,6 +3,9 @@ package cn.itcast.message;
 import lombok.Data;
 import lombok.ToString;
 
+/**
+ * @author yihang
+ */
 @Data
 @ToString(callSuper = true)
 public class RpcResponseMessage extends Message {
@@ -10,7 +13,6 @@ public class RpcResponseMessage extends Message {
      * 返回值
      */
     private Object returnValue;
-
     /**
      * 异常值
      */
